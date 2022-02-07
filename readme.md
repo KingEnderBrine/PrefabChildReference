@@ -1,7 +1,7 @@
 ## Setup
 Add this line to your Packages/manifest.json dependencies array;
 ```json
-    "com.kingenderbrine.rorskinbuilder": "https://github.com/KingEnderBrine/RoRSkinBuilder.git",
+    "com.kingenderbrine.prefabchildreference": "https://github.com/KingEnderBrine/PrefabChildReference.git",
 ```
 
 ## Usage
