@@ -12,20 +12,20 @@ namespace PrefabChildReference
 
         private static GameObject ConvertToPrefab(GameObject sceneObject)
         {
-            var prefabStage = PrefabStageUtility.GetPrefabStage(sceneObject);
-            if (prefabStage == null)
+            var prefabRoot = PrefabUtility.GetNearestPrefabInstanceRoot(sceneObject);
+            if (!prefabRoot)
             {
                 return null;
             }
 
-            var assetPath = prefabStage.prefabAssetPath;
+            var assetPath = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(prefabRoot);
             if (assetPath == null)
             {
                 return null;
             }
 
             var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(assetPath);
-            var path = Utils.GetPathFromRoot(sceneObject.transform);
+            var path = Utils.GetPath(prefabRoot.transform, sceneObject.transform);
             foreach (var i in path)
             {
                 prefab = prefab.transform.GetChild(i).gameObject;

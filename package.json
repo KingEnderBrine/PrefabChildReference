@@ -1,6 +1,6 @@
 {
     "name": "com.kingenderbrine.prefabchildreference",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "displayName": "Prefab Child Reference",
     "description": "Allows you to use GameObjects inside a prefab as a prefab",
     "unity": "2018.4",
